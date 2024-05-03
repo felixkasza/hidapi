@@ -100,6 +100,8 @@
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
@@ -111,6 +113,17 @@
       <AdditionalIncludeDirectories>..\hidapi</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG</PreprocessorDefinitions>
     </ResourceCompile>
+    <PostBuildEvent>
+      <Command>(
+copy $(TargetDir)$(TargetName).dll $(LIB)\$(TargetName)-d.dll
+copy $(TargetDir)$(TargetName).lib $(LIB)\$(TargetName)-d.lib
+copy $(TargetDir)$(TargetName).pdb $(LIB)\$(TargetName)-d.pdb
+copy $(ProjectDir)..\$(ProjectName)\$(ProjectName).h $(INCLUDE)
+)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy headers and libs to include and lib directories</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -123,6 +136,8 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
@@ -133,6 +148,17 @@
       <AdditionalIncludeDirectories>..\hidapi</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG</PreprocessorDefinitions>
     </ResourceCompile>
+    <PostBuildEvent>
+      <Command>(
+copy $(TargetDir)$(TargetName).dll $(LIB)\$(TargetName)-d.dll
+copy $(TargetDir)$(TargetName).lib $(LIB)\$(TargetName)-d.lib
+copy $(TargetDir)$(TargetName).pdb $(LIB)\$(TargetName)-d.pdb
+copy $(ProjectDir)..\$(ProjectName)\$(ProjectName).h $(INCLUDE)
+)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy headers and libs to include and lib directories</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -145,6 +171,8 @@
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
@@ -158,6 +186,17 @@
       <AdditionalIncludeDirectories>..\hidapi</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG</PreprocessorDefinitions>
     </ResourceCompile>
+    <PostBuildEvent>
+      <Command>(
+copy $(TargetDir)$(TargetName).dll $(LIB)
+copy $(TargetDir)$(TargetName).lib $(LIB)
+copy $(TargetDir)$(TargetName).pdb $(LIB)
+copy $(ProjectDir)..\$(ProjectName)\$(ProjectName).h $(INCLUDE)
+)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy headers and libs to include and lib directories</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -171,6 +210,8 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
@@ -183,6 +224,17 @@
       <AdditionalIncludeDirectories>..\hidapi</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG</PreprocessorDefinitions>
     </ResourceCompile>
+    <PostBuildEvent>
+      <Command>(
+copy $(TargetDir)$(TargetName).dll $(LIB)
+copy $(TargetDir)$(TargetName).lib $(LIB)
+copy $(TargetDir)$(TargetName).pdb $(LIB)
+copy $(ProjectDir)..\$(ProjectName)\$(ProjectName).h $(INCLUDE)
+)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy headers and libs to include and lib directories</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="hid.c" />
